@@ -68,7 +68,7 @@ export default function UpdateBookPage() {
   return (
     <BookLayouts>
       <h1 className="text-2xl font-semibold text-secondary-color-blue">
-        Tambah Buku
+        Edit Buku
       </h1>
       <Card className="px-5 py-4 my-5 border-none shadow-none md:py-6 md:px-8 bg-slate-100">
         <Form {...formCreateBook}>
