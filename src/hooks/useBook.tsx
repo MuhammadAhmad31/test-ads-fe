@@ -78,7 +78,6 @@ export const useAddBook = () => {
           title: "Berhasil",
           description: `${result.message}`,
         });
-
         // Invalidate the book
         queryClient.invalidateQueries(["books"]);
 
