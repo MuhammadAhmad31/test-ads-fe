@@ -10,8 +10,6 @@ import { BookLayouts } from "@/components/Layout/BookLayouts";
 import { Eye, PenIcon, TrashIcon } from "lucide-react";
 import Swal from "sweetalert2";
 import { convertIDR } from "@/utils/convertIDR";
-import { useQueryClient } from "@tanstack/react-query";
-import { deleteBook } from "@/api/data";
 
 export default function Book() {
   const router = useRouter();

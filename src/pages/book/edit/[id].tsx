@@ -1,5 +1,4 @@
 import { BookLayouts } from "@/components/Layout/BookLayouts";
-import { ButtonLoader } from "@/components/ui/Custom/ButtonLoader";
 import { Card } from "@/components/ui/card";
 import {
   Form,
@@ -13,7 +12,7 @@ import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useAddBook, useEditBook, useGetDetailBook } from "@/hooks/useBook";
+import { useEditBook, useGetDetailBook } from "@/hooks/useBook";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/router";
@@ -157,14 +156,6 @@ export default function UpdateBookPage() {
                 )}
               />
             </div>
-            {/* <div className="flex items-center justify-center md:justify-end">
-              <ButtonLoader
-                loading={isLoading}
-                className="w-2/4 md:w-1/4 bg-button-color-teal hover:bg-button-color-teal/90"
-              >
-                Tambah
-              </ButtonLoader>
-            </div> */}
             <Button>Edit Buku</Button>
           </form>
         </Form>
