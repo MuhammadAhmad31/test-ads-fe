@@ -15,10 +15,11 @@ import { deleteBook } from "@/api/data";
 
 export default function Book() {
   const router = useRouter();
-  const queryClient = useQueryClient();
 
   const [book, setBook] = useState<Book[]>([]);
   const { data } = useGetBook();
+
+  const { deleteBook } = useDeleteBook();
 
   useEffect(() => {
     if (data?.books) {
@@ -36,10 +37,7 @@ export default function Book() {
       cancelButtonText: "Tidak",
     }).then((result) => {
       if (result.isConfirmed) {
-        deleteBook(id).then(() => {
-          queryClient.invalidateQueries(["books"]);
-          router.reload();
-        });
+        deleteBook(id);
       }
     });
   };

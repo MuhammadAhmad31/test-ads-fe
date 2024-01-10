@@ -204,8 +204,8 @@ export const useDeleteBook = () => {
   const queryClient = useQueryClient();
 
   const { mutate, isLoading, isSuccess } = useMutation(
-    (payload: DeleteBook) => {
-      return deleteBook(payload.id);
+    (payload: number) => {
+      return deleteBook(payload);
     },
     {
       onSuccess: (response) => {
@@ -217,11 +217,11 @@ export const useDeleteBook = () => {
           description: `${result.message}`,
         });
 
-        // Invalidate the book
-        queryClient.invalidateQueries(["book"]);
-
-        // redirect to book page
-        route.push("/book");
+        setTimeout(() => {
+          // Invalidate the book
+          queryClient.invalidateQueries(["book"]);
+          route.reload();
+        }, 800);
       },
       onError: ({ response }) => {
         const { message } = response.data as ResponseApiError;
